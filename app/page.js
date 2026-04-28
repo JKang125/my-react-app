@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="p-10">
-      <h1 className="text-4xl font-bold text-purple-600">My React App</h1>
+      <h1 className="text-4xl font-bold text-purple-600">LESS GOO </h1>
       <p className="text-gray-500 mt-4">Type your name below</p>
       <input
         className="border p-2 mt-4 rounded text-black bg-white"
