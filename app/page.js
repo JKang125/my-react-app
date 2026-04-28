@@ -4,14 +4,14 @@ import { useState } from 'react'
 
 export default function Home() {
   const [name, setName] = useState('')
-  const [joke, setJoke] = useState('')
+ const [imageUrl, setImageUrl] = useState('')
   const [loading, setLoading] = useState(false)
 
   async function handleClick() {
     setLoading(true)
-    const response = await fetch('https://api.chucknorris.io/jokes/random')
+    const response = await fetch('https://dog.ceo/api/breeds/image/random')
     const data = await response.json()
-    setJoke('Welcome ' + name + '! ' + data.value)
+    setImageUrl(data.message)
     setLoading(false)
   }
 
@@ -30,7 +30,7 @@ export default function Home() {
       >
         {loading ? 'Loading...' : 'Get Joke'}
       </button>
-      <p className="mt-6 text-xl">{joke}</p>
+      {imageUrl && <img src={imageUrl} className="mt-6 w-64 rounded-lg" />}
     </div>
   )
 }
